@@ -22,7 +22,6 @@ def main():
 
     for line in valueFile:
         tempValueList.append(line.split())
-
     charValues = dict(zip(tempValueList[0][0::2], tempValueList[0][1::2]))
     for k in charValues:
         charValues[k] = int(charValues[k])
@@ -30,8 +29,10 @@ def main():
     for value in tempTargetScores:
         targetScores.append(int(value))
 
+
     for line in storyFile:
         tempStoryList.append(line.split())
+    # print(tempStoryList)
 
     for item in tempStoryList:
         for i in item:
@@ -41,13 +42,21 @@ def main():
             if re.match('[a-z]', word):
                 wordSet.add(word)
 
+    # for word in storyList:
+    #     if word in 'abcdefghijklmnopqrstuvwxyz':
+    #         wordSet.add(word)
+
     # print(storyList)
+
+    # def defineWord(word):
+    #     if word.isalpha():
+    #         if word in 'abcdefghijklmnopqrstuvwxyz':
+    #             return(True)
 
     for word in wordSet:
         alphaWordList.append(word)
 
     alphaWordList.sort()
-
 
     # print(alphaWordList)
     for index,word in enumerate(alphaWordList):
@@ -64,7 +73,7 @@ def main():
                 matchedScores[k] = wordValues[k]
             # matchedScores[k] = wordValues[k]
 
-    print(matchedScores)
+    # print(matchedScores)
     # print(wordValues['able'])
 
 main()
