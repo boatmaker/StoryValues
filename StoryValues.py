@@ -41,18 +41,23 @@ def main():
             if re.match('[a-z]', word):
                 wordSet.add(word)
 
+    # print(storyList)
+
     for word in wordSet:
         alphaWordList.append(word)
 
     alphaWordList.sort()
 
+
     # print(alphaWordList)
     for index,word in enumerate(alphaWordList):
         wordValues[word] = score(word) + index
+    #     print(word, wordValues[word])
+    # print(len(wordValues))
 
     for k in wordValues:
         # print(k)
-        # print(wordValues[k])
+        # print(k, wordValues[k])
         for j in targetScores:
             # print(j, wordValues[k], k)
             if wordValues[k] == j:
@@ -60,6 +65,6 @@ def main():
             # matchedScores[k] = wordValues[k]
 
     print(matchedScores)
-    print(wordValues['able'])
+    # print(wordValues['able'])
 
 main()
