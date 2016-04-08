@@ -51,7 +51,7 @@ def main():
         wordValues[word] = score(word) + index
 
     for k in wordValues:
-        print(k)
+        # print(k)
         # print(wordValues[k])
         for j in targetScores:
             # print(j, wordValues[k], k)
@@ -59,7 +59,7 @@ def main():
                 matchedScores[k] = wordValues[k]
             # matchedScores[k] = wordValues[k]
 
-    # print(matchedScores)
-    # print(wordValues['able'])
+    print(matchedScores)
+    print(wordValues['able'])
 
 main()
